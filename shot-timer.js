@@ -5,10 +5,6 @@ const front = document.getElementById("front");
 const back = document.getElementById("back");
 const directions = [right, left, front, back];
 const startButton = document.querySelector("button");
-const tone = document.getElementById("tone");
-const direction = document.getElementById("direction");
-let sound = beep;
-
 
 function randomDirection() {
   return directions[Math.floor(Math.random() * directions.length)];
