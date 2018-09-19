@@ -25,6 +25,8 @@ function playSound() {
 function onClick() {
   if (direction.checked) {
     sound = randomDirection();
+  } else {
+    sound = beep;
   }
   let int = getRandom(3, 8) * 1000;
   console.log(int);
