@@ -3,7 +3,7 @@ function getRandom(min, max) {
 }
 
 function playSound() {
-  new Audio("beep.mp3").play();
+  new Audio("beep.aac").play();
 }
 
 let int = getRandom(3, 7) * 1000;
