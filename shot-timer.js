@@ -7,8 +7,8 @@ function playSound() {
 }
 
 let int = getRandom(3, 7) * 1000;
-const startButton = document.querySelector("button");
 
+const startButton = document.querySelector("button");
 
 startButton.addEventListener('click', function () {
   setTimeout(playSound, int);

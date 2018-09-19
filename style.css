@@ -2,16 +2,14 @@ button {
   font-size: 30px;
   font-weight: bold;
   display: block;
-  margin: 50px auto;
+  margin: 100px auto;
   color: #dcfbb4;
   background-color: green;
   border: 0.4em solid #d4f7da;
   border-radius: 50%;
-  transition: all 0.3s;
   box-sizing: border-box;
-  width: 4em;
-  height: 4em;
+  width: 200px;
+  height: 200px;
   cursor: pointer;
-  box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
   text-align: center;
 }
