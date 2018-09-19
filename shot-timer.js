@@ -3,8 +3,10 @@ function getRandom(min, max) {
 }
 
 function playSound() {
-  new Audio("beep.aac").play();
+  audio.play();
 }
+
+let audio = document.querySelector("audio");
 
 let int = getRandom(3, 7) * 1000;
 
