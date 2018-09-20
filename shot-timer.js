@@ -5,13 +5,21 @@ const front = document.getElementById("front");
 const back = document.getElementById("back");
 const directions = [right, left, front, back];
 const startButton = document.querySelector("button");
+let min = document.getElementById("min");
+let max = document.getElementById("max");
+const maxOptions = max.getElementsByTagName("option");
+const minOptions = min.getElementsByTagName("option");
+let minValue = 3;
+let maxValue = 6;
+let int;
 
 function randomDirection() {
   return directions[Math.floor(Math.random() * directions.length)];
 }
 
-function getRandom(min, max) {
-  return Math.random() * (max - min) + min;
+function getRandom(minValue, maxValue) {
+  int = ((Math.random() * (maxValue - minValue)) + minValue) * 1000;
+  console.log(int);
 }
 
 function playSound() {
@@ -24,9 +32,38 @@ function onClick() {
   } else {
     sound = beep;
   }
-  let int = getRandom(3, 8) * 1000;
-  console.log(int);
+  getRandom(minValue, maxValue);
   setTimeout(playSound, int);
 }
+
+function disableMaxOptions(value) {
+  for (let i = 0; i < minOptions.length; i++) {
+      if (maxOptions[i].value <= value) {
+      maxOptions[i].setAttribute("disabled", true);
+    } else {
+      maxOptions[i].removeAttribute("disabled");
+    }
+  }
+}
+
+function disableMinOptions(value) {
+  for (let i = 0; i < minOptions.length; i++) {
+      if (minOptions[i].value >= value) {
+      minOptions[i].setAttribute("disabled", true);
+    } else {
+      minOptions[i].removeAttribute("disabled");
+    }
+  }
+}
+
+min.addEventListener('click', function () {
+  minValue = parseInt(min.options[min.selectedIndex].value);
+  disableMaxOptions(minValue);
+})
+
+max.addEventListener('click', function () {
+  maxValue = parseInt(max.options[max.selectedIndex].value);
+  disableMinOptions(maxValue);
+})
 
 startButton.addEventListener('click', onClick, false);

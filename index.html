@@ -10,6 +10,7 @@
 <body>
   <button onclick="" type="button" name="Start">Start</button>
 
+<p>CHOOSE A SOUND</p>
   <div class="radio-buttons">
     <input type="radio" name="group1" value="" class="on" id="tone" checked>
     <label for="tone">Tone</label>
@@ -23,6 +24,36 @@
   <audio id="right" src="sounds/right.m4a"></audio>
   <audio id="front" src="sounds/front.m4a"></audio>
   <audio id="back" src="sounds/back.m4a"></audio>
+
+<p>CUSTOMIZE INTERVAL</p>
+
+<p>The sound will play at a random time between</p>
+
+<div class="seconds">
+    <select class="min" name="" id="min">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3" selected="selected">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
+
+  <p>and</p>
+    <select class="max" name="" id="max">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6" selected="selected">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  <p>seconds.</p>
+</div>
 
   <script src="shot-timer.js" charset="utf-8"></script>
 </body>
