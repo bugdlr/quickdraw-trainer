@@ -5,6 +5,7 @@ const front = document.getElementById("front");
 const back = document.getElementById("back");
 const directions = [right, left, front, back];
 const startButton = document.querySelector("button");
+const onoffSwitch = document.getElementById("myonoffswitch");
 let min = document.getElementById("min");
 let max = document.getElementById("max");
 const maxOptions = max.getElementsByTagName("option");
@@ -12,14 +13,14 @@ const minOptions = min.getElementsByTagName("option");
 let minValue = 3;
 let maxValue = 6;
 let int;
+let isPaused = true;
 
 function randomDirection() {
   return directions[Math.floor(Math.random() * directions.length)];
 }
 
-function getRandom(minValue, maxValue) {
-  int = ((Math.random() * (maxValue - minValue)) + minValue) * 1000;
-  console.log(int);
+function getRandom() {
+  return int = ((Math.random() * (maxValue - minValue)) + minValue) * 1000;
 }
 
 function playSound() {
@@ -32,12 +33,21 @@ function onClick() {
   } else {
     sound = beep;
   }
-  getRandom(minValue, maxValue);
-  setTimeout(playSound, int);
+
+  if (!onoffSwitch.clicked) {
+    setTimeout(playSound, getRandom());
+  } else {
+    setInterval(playSound, (getRandom() + 4000));
+  }
 }
 
+function loop() {
+  setInterval(onClick, 4000);
+}
+
+
 function disableMaxOptions(value) {
-  for (let i = 0; i < minOptions.length; i++) {
+  for (let i = 0; i < maxOptions.length; i++) {
       if (maxOptions[i].value <= value) {
       maxOptions[i].setAttribute("disabled", true);
     } else {
@@ -64,6 +74,13 @@ min.addEventListener('click', function () {
 max.addEventListener('click', function () {
   maxValue = parseInt(max.options[max.selectedIndex].value);
   disableMinOptions(maxValue);
+})
+
+onoffSwitch.addEventListener('click', function() {
+  onoffSwitch.classList.toggle("checked");
+  if (!onoffSwitch.checked) {
+    clearInterval(loop);
+  }
 })
 
 startButton.addEventListener('click', onClick, false);
