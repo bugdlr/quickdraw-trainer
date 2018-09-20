@@ -2,7 +2,7 @@ button {
   font-size: 30px;
   font-weight: bold;
   display: block;
-  margin: 100px auto 40px;
+  margin: 40px auto;
   color: #dcfbb4;
   background-color: green;
   border: 0.4em solid #d4f7da;
@@ -20,15 +20,21 @@ button:focus {
 
 body {
   text-align: center;
+  font-size: 18px;
+  padding: 20px;
 }
 
 .radio-buttons {
   margin-bottom: 50px;
 }
 
+select {
+  font-size: 17px;
+}
+
 .seconds {
   max-width: 350px;
-  height: 20px;
+  height: 30px;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
