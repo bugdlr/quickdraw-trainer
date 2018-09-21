@@ -1,17 +1,25 @@
-/*add clicked look to button*/
+body {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-family: 'Lato', Trebuchet, Arial, sans-serif;
+}
 
+p {
+  margin: 5px;
+}
 
 button {
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
   display: block;
-  margin: 40px auto;
+  margin: 10px auto 25px;
   color: #fff;
   background-color: green;
   border: 0.4em solid #d4f7da;
   border-radius: 50%;
-  box-sizing: border-box;
   width: 200px;
   height: 200px;
   cursor: pointer;
@@ -20,14 +28,11 @@ button {
 
 button:focus {
   outline: 0;
-  scale: 110%;
 }
 
-body {
-  text-align: center;
-  font-size: 18px;
-  padding: 20px;
-  font-family: Trebuchet, Arial, sans-serif;
+button:active {
+  transform: translateY(2px);
+  filter: saturate(150%);
 }
 
 .radio-buttons {
@@ -41,7 +46,7 @@ select {
 .seconds {
   max-width: 350px;
   height: 30px;
-  margin: 5px auto 20px;
+  margin: 5px auto 30px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
