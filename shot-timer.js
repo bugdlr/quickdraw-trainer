@@ -34,18 +34,19 @@ function onClick() {
     sound = beep;
   }
 
-  if (!onoffSwitch.clicked) {
-    setTimeout(playSound, getRandom());
-  } else {
-    setInterval(playSound, (getRandom() + 4000));
+  setTimeout(playSound, getRandom());
+  console.log(int);
+
+  if(onoffSwitch.checked) {
+    loop();
   }
 }
 
 function loop() {
-  setInterval(onClick, 4000);
+  setTimeout(onClick, 4000 + int);
 }
 
-
+// disable options based off selections
 function disableMaxOptions(value) {
   for (let i = 0; i < maxOptions.length; i++) {
       if (maxOptions[i].value <= value) {
@@ -66,6 +67,8 @@ function disableMinOptions(value) {
   }
 }
 
+
+// EVENT LISTENERS
 min.addEventListener('click', function () {
   minValue = parseInt(min.options[min.selectedIndex].value);
   disableMaxOptions(minValue);
